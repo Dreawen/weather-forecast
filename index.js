@@ -12,7 +12,7 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'app/views'));
 
-routes.weather(app);
+routes(app);
 
 app.use(express.static('public'));
 
