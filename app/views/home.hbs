@@ -2,14 +2,18 @@
     <label class="label">Город</label>
     <div class="field has-addons">
         <div class="control is-expanded">
-            <div class="control">
-                <input class="input" type="text" placeholder="Введите название города">
-            </div>
+            <input name="city" class="input" type="text" placeholder="Введите название города">
+        </div>
+        <div class="control">
+            <select name="type" class="input">
+                <option value="current">Текущая</option>
+                <option value="forecast">Прогноз</option>
+            </select>
         </div>
         <div class="control">
             <button type="submit" class="button is-info">
                 Найти
-            </a>
+            </button>
         </div>
     </div>
 </form>

@@ -7,6 +7,10 @@ module.exports = function(app) {
     });
 
     app.post('/search', (req, res) => {
-        res.redirect();
+        res.redirect(`/${req.body.type}/${req.body.city}`);
     });
+
+    app.get('/errors', (req, res) => {
+        res.render('errors', req);
+    })
 }

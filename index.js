@@ -3,6 +3,7 @@ const app = express();
 const exphbs = require('express-handlebars');
 const path = require('path');
 const routes = require('./app/routes');
+const bodyParser = require('body-parser');
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'app',
@@ -12,8 +13,12 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'app/views'));
 
-routes(app);
-
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+routes(app);
 
 app.listen(3000);
